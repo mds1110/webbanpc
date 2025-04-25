@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            background: #f7f7f7;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 14px;
+            color: #333;
+        }
+        .card-login {
+            background: #fff;
+            padding: 2rem;
+            max-width: 480px;
+            width: 100%;
+        }
+        .login-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .login-header h4 {
+            margin: 0;
+        }
+        .login-header .divider {
+            width: 1px;
+            height: 28px;
+            background: #ccc;
+            margin: 0 1rem;
+        }
+        .form-control-custom {
+            background: #ececec;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 4px;
+        }
+        ::placeholder {
+            color: #999;
+            font-style: italic;
+        }
+        .recap {
+            font-size: 12px;
+            margin: 0.5rem 0 1.5rem;
+        }
+        .help-links {
+            font-size: 13px;
+            margin-left: 1rem;
+        }
+        .help-links a {
+            color: #0d6efd;
+            text-decoration: none;
+            margin-right: 1rem;
+        }
+        .btn-orange {
+          background-color: #f7941d;
+          color: white;
+          border: none;
+        }
+        .btn-orange:hover {
+          background-color: #e67e00;
+          color: white;
+        }
+        .btn-orange:focus {
+          outline: none;
+          box-shadow: 0 0 0 0.2rem rgba(247, 148, 29, 0.5);
+        }
+    </style>
+    
+
+
+
+</head>
+<body>
+    <section class="header ">
+        <div class="container d-flex justify-content-between align-items-center">
+          
+          <a href="index.html" class="d-flex align-items-center text-decoration-none">
+            <img src="#" alt="SHOP Logo" height="50">
+          </a>
+              
+          <form class="d-flex flex-grow-1 mx-4" role="search">
+            <input class="form-control" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
+            <button class="btn btn-warning ms-2" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+      
+          <div class="d-flex align-items-center">
+            <div class="me-3 text-end">
+              <a href="#" class="text-decoration-none text-dark d-block">Đăng nhập / Đăng ký</a>
+              <a href="#" class="text-decoration-none text-dark small">Tài khoản của tôi <i class="fas fa-chevron-down"></i></a>
+            </div>
+            <div class="position-relative">
+              <a href="cart.html" class="text-dark text-decoration-none d-flex align-items-center">
+                <i class="fas fa-shopping-bag fs-5"></i>
+                <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  0
+                </span>
+                <span class="ms-1">Giỏ hàng</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section class="menu">
+        <!-- Thanh topbar -->
+        <section class="topbar py-2 border-bottom bg-white">
+          <div class="container d-flex align-items-center justify-content-between">
+            <!-- Menu trái: Danh mục sản phẩm -->
+            <div class="d-flex align-items-center">
+              <i class="fas fa-bars fa-lg me-2"></i>
+              <strong class="text-uppercase">Danh mục sản phẩm</strong>
+            </div>
+      
+            <!-- Icon phải -->
+            <div class="d-flex gap-4 text-muted small">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-award me-1"></i>
+                Chất lượng đảm bảo
+              </div>
+              <div class="d-flex align-items-center">
+                <i class="fas fa-shipping-fast me-1"></i>
+                Vận chuyển siêu tốc
+              </div>
+              <div class="d-flex align-items-center">
+                <i class="fas fa-headset me-1"></i>
+                Tư vấn Build PC: <strong class="ms-1">0123456789</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+    </section>    
+
+
+    <div class="container py-5">
+      <div class="card mx-auto" style="max-width: 500px;">
+        <div class="card-body">
+          <ul class="nav nav-tabs mb-4" id="tabMenu">
+            <li class="nav-item">
+              <a class="nav-link active" id="login-tab" href="#">Đăng nhập</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="register-tab" href="#">Đăng ký</a>
+            </li>
+          </ul>
+    
+          <!-- Đăng nhập -->
+          <form id="login-form">
+            <div class="mb-3">
+              <label for="loginEmail" class="form-label">Email</label>
+              <input type="email" class="form-control" id="loginEmail" required>
+            </div>
+            <div class="mb-3">
+              <label for="loginPassword" class="form-label">Mật khẩu</label>
+              <input type="password" class="form-control" id="loginPassword" required>
+            </div>
+            <button type="submit" class="btn btn-orange w-100">Đăng nhập</button>
+          </form>
+    
+          <!-- Đăng ký -->
+          <form id="register-form" class="d-none">
+            <div class="mb-3">
+              <label class="form-label">Họ</label>
+              <input type="text" class="form-control" id="regLastName" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Tên</label>
+              <input type="text" class="form-control" id="regFirstName" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Giới tính</label><br>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" value="Nữ" required>
+                <label class="form-check-label">Nữ</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="gender" value="Nam">
+                <label class="form-check-label">Nam</label>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Ngày sinh</label>
+              <input type="date" class="form-control" id="regDob" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" id="regEmail" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Mật khẩu</label>
+              <input type="password" class="form-control" id="regPassword" required>
+            </div>
+            <button type="submit" class="btn btn-orange w-100">Đăng ký</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    
+      <footer class="bg-light pt-5 pb-3 border-top mt-5">
+        <div class="container">
+          <div class="row">
+            <!-- Về Trang -->
+            <div class="col-lg-3 col-md-6 mb-4">
+              <h6 class="fw-bold mb-3">Về Trang</h6>
+              <p class="small">qwertyuiopasdfghjklzxcv</p>
+              <ul class="list-unstyled small">
+                <li><a href="http://127.0.0.1:3000/html/checkout.html" class="text-decoration-none text-dark">Thông tin về trang</a></li>
+                <li><a href="http://127.0.0.1:3000/html/sitemap.html" class="text-decoration-none text-dark">Sơ đồ trang</a></li>
+              </ul>
+              <div class="d-flex gap-2">
+                <a href="#"><i class="fab fa-facebook-f text-dark"></i></a>
+                <a href="#"><i class="fab fa-twitter text-dark"></i></a>
+                <a href="#"><i class="fab fa-instagram text-dark"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g text-dark"></i></a>
+                <a href="#"><i class="fab fa-youtube text-dark"></i></a>
+              </div>
+            </div>
+      
+            <!-- Thông tin liên hệ -->
+            <div class="col-lg-3 col-md-6 mb-4">
+              <h6 class="fw-bold mb-3">Thông tin liên hệ</h6>
+              <p class="small mb-1">CS1: ABC</p>
+              <p class="small mb-1">CS2: BCA</p>
+              <p class="small mb-1"><i class="fas fa-phone me-2"></i>0123456789 - 0321654987</p>
+              <p class="small"><i class="fas fa-envelope me-2"></i>abc123@gmail.com</p>
+            </div>
+      
+            <!-- Tài khoản -->
+            <div class="col-lg-3 col-md-6 mb-4">
+              <h6 class="fw-bold mb-3">Tài Khoản Ngân Hàng</h6>
+              <ul class="list-unstyled small">
+                <li><a href="#" class="text-decoration-none text-dark">Tài Khoản Ngân Hàng</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Tìm kiếm</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Phương thức thanh toán</a></li>
+              </ul>
+            </div>
+      
+            <!-- Chính sách -->
+            <div class="col-lg-3 col-md-6 mb-4">
+              <h6 class="fw-bold mb-3">Chính sách</h6>
+              <ul class="list-unstyled small">
+                <li><a href="#" class="text-decoration-none text-dark">Chính Sách Bảo Mật</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Qui Định Bảo Hành</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Chính Sách Đổi Trả</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Điều khoản sử dụng</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Chính sách vận chuyển & kiểm hàng</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Phân định trách nhiệm của tổ chức cung ứng dịch vụ logistics</a></li>
+              </ul>
+            </div>
+          </div>
+      
+          <!-- Bản quyền -->
+          <div class="text-center small text-muted border-top pt-3 mt-3">
+            Copyright © 2025 Bản quyền của Công ty cổ phần ABC Việt Nam - Trụ sở: ABC 
+          </div>
+        </div>
+      </footer>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // Chuyển tab
+    const loginTab = document.getElementById("login-tab");
+    const registerTab = document.getElementById("register-tab");
+    const loginForm = document.getElementById("login-form");
+    const registerForm = document.getElementById("register-form");
+
+    loginTab.onclick = () => {
+      loginTab.classList.add("active");
+      registerTab.classList.remove("active");
+      loginForm.classList.remove("d-none");
+      registerForm.classList.add("d-none");
+    };
+
+    registerTab.onclick = () => {
+      loginTab.classList.remove("active");
+      registerTab.classList.add("active");
+      loginForm.classList.add("d-none");
+      registerForm.classList.remove("d-none");
+    };
+
+    // Xử lý đăng ký
+    registerForm.onsubmit = (e) => {
+      e.preventDefault();
+      const users = JSON.parse(localStorage.getItem("users") || "[]");
+      const email = document.getElementById("regEmail").value;
+
+      if (users.some(user => user.email === email)) {
+        alert("Email đã được đăng ký!");
+        return;
+      }
+
+      const newUser = {
+        lastname: document.getElementById("regLastName").value,
+        firstname: document.getElementById("regFirstName").value,
+        gender: document.querySelector('input[name="gender"]:checked').value,
+        dob: document.getElementById("regDob").value,
+        email: email,
+        password: document.getElementById("regPassword").value,
+      };
+
+      users.push(newUser);
+      localStorage.setItem("users", JSON.stringify(users));
+      alert("Đăng ký thành công!");
+      loginTab.click();
+    };
+
+    // Xử lý đăng nhập
+    loginForm.onsubmit = (e) => {
+      e.preventDefault();
+      const users = JSON.parse(localStorage.getItem("users") || "[]");
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+
+      const user = users.find(u => u.email === email && u.password === password);
+      if (!user) {
+        alert("Sai thông tin đăng nhập!");
+        return;
+      }
+
+      localStorage.setItem("session", JSON.stringify(user));
+      alert("Đăng nhập thành công!");
+      window.location.href = "index.html"; // điều hướng đến trang chính
+    };
+    function updateCartCount() {
+          const cart = JSON.parse(localStorage.getItem("cart")) || [];
+          const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+          document.getElementById("cart-count").textContent = count;
+        }
+
+        // Gọi hàm khi load trang
+        updateCartCount();
+  </script>
+
+</body>
+</html>

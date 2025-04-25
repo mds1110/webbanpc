@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        .news-card:hover {
+          box-shadow: 0 0 10px rgba(0,0,0,0.15);
+          transform: translateY(-3px);
+          transition: all 0.3s ease;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <section class="header ">
+        <div class="container d-flex justify-content-between align-items-center">
+          
+          <a href="index.html" class="d-flex align-items-center text-decoration-none">
+            <img src="#" alt="SHOP Logo" height="50">
+          </a>
+              
+          <form class="d-flex flex-grow-1 mx-4" role="search">
+            <input class="form-control" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
+            <button class="btn btn-warning ms-2" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+      
+          <div class="d-flex align-items-center">
+            <div class="me-3 text-end">
+              <a href="http://127.0.0.1:3000/html/login.html" class="text-decoration-none text-dark d-block">Đăng nhập / Đăng ký</a>
+              <a href="#" class="text-decoration-none text-dark small">Tài khoản của tôi <i class="fas fa-chevron-down"></i></a>
+            </div>
+            <div class="position-relative">
+              <a href="cart.html" class="text-dark text-decoration-none d-flex align-items-center">
+                <i class="fas fa-shopping-bag fs-5"></i>
+                <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  0
+                </span>
+                <span class="ms-1">Giỏ hàng</span>
+              </a>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section class="menu">
+        <!-- Thanh topbar -->
+        <section class="topbar py-2 border-bottom bg-white">
+          <div class="container d-flex align-items-center justify-content-between">
+            <!-- Menu trái: Danh mục sản phẩm -->
+            <div class="d-flex align-items-center">
+              <i class="fas fa-bars fa-lg me-2"></i>
+              <strong class="text-uppercase">Danh mục sản phẩm</strong>
+            </div>
+      
+            <!-- Icon phải -->
+            <div class="d-flex gap-4 text-muted small">
+              <div class="d-flex align-items-center">
+                <i class="fas fa-award me-1"></i>
+                Chất lượng đảm bảo
+              </div>
+              <div class="d-flex align-items-center">
+                <i class="fas fa-shipping-fast me-1"></i>
+                Vận chuyển siêu tốc
+              </div>
+              <div class="d-flex align-items-center">
+                <i class="fas fa-headset me-1"></i>
+                Tư vấn Build PC: <strong class="ms-1">0123456789</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+      
+      <div class="container mt-5 mb-5">
+        <h2 class="mb-4 fw-bold text-uppercase">Tin Tức Mới Nhất</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="news-list">
+          <!-- Tin tức sẽ được render bằng JS -->
+        </div>
+      </div>
+      
+      
+
+
+    
+      <footer class="bg-light pt-5 pb-3 border-top mt-5">
+        <div class="container">
+          <div class="row">
+            <!-- Về Trang -->
+            <div class="col-lg-3 col-md-6 mb-4">
+              <h6 class="fw-bold mb-3">Về Trang</h6>
+              <p class="small">qwertyuiopasdfghjklzxcv</p>
+              <ul class="list-unstyled small">
+                <li><a href="http://127.0.0.1:3000/html/checkout.html" class="text-decoration-none text-dark">Thông tin về trang</a></li>
+                <li><a href="http://127.0.0.1:3000/html/sitemap.html" class="text-decoration-none text-dark">Sơ đồ trang</a></li>
+              </ul>
+              <div class="d-flex gap-2">
+                <a href="#"><i class="fab fa-facebook-f text-dark"></i></a>
+                <a href="#"><i class="fab fa-twitter text-dark"></i></a>
+                <a href="#"><i class="fab fa-instagram text-dark"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g text-dark"></i></a>
+                <a href="#"><i class="fab fa-youtube text-dark"></i></a>
+              </div>
+            </div>
+      
+            <!-- Thông tin liên hệ -->
+            <div class="col-lg-3 col-md-6 mb-4">
+              <h6 class="fw-bold mb-3">Thông tin liên hệ</h6>
+              <p class="small mb-1">CS1: ABC</p>
+              <p class="small mb-1">CS2: BCA</p>
+              <p class="small mb-1"><i class="fas fa-phone me-2"></i>0123456789 - 0321654987</p>
+              <p class="small"><i class="fas fa-envelope me-2"></i>abc123@gmail.com</p>
+            </div>
+      
+            <!-- Tài khoản -->
+            <div class="col-lg-3 col-md-6 mb-4">
+              <h6 class="fw-bold mb-3">Tài Khoản Ngân Hàng</h6>
+              <ul class="list-unstyled small">
+                <li><a href="#" class="text-decoration-none text-dark">Tài Khoản Ngân Hàng</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Tìm kiếm</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Phương thức thanh toán</a></li>
+              </ul>
+            </div>
+      
+            <!-- Chính sách -->
+            <div class="col-lg-3 col-md-6 mb-4">
+              <h6 class="fw-bold mb-3">Chính sách</h6>
+              <ul class="list-unstyled small">
+                <li><a href="#" class="text-decoration-none text-dark">Chính Sách Bảo Mật</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Qui Định Bảo Hành</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Chính Sách Đổi Trả</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Điều khoản sử dụng</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Chính sách vận chuyển & kiểm hàng</a></li>
+                <li><a href="#" class="text-decoration-none text-dark">Phân định trách nhiệm của tổ chức cung ứng dịch vụ logistics</a></li>
+              </ul>
+            </div>
+          </div>
+      
+          <!-- Bản quyền -->
+          <div class="text-center small text-muted border-top pt-3 mt-3">
+            Copyright © 2025 Bản quyền của Công ty cổ phần ABC Việt Nam - Trụ sở: ABC 
+          </div>
+        </div>
+      </footer>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script type="module">
+        import { news } from '../js/data.js'; // đường dẫn tùy bạn lưu file ở đâu
+    
+        const newsList = document.getElementById("news-list");
+    
+        news.forEach(item => {
+          const html = `
+            <div class="col">
+              <div class="card news-card h-100 border-0">
+                <div class="card-body">
+                  <h5 class="card-title">${item.title}</h5>
+                  <p class="card-text text-muted small">ID: ${item.id}</p>
+                  <p class="card-text">${item.short}</p>
+                  <a href="news_detail.html?id=${item.id}" class="btn btn-outline-primary btn-sm">Đọc thêm</a>
+                </div>
+              </div>
+            </div>
+          `;
+          newsList.innerHTML += html;
+        });
+        function updateCartCount() {
+          const cart = JSON.parse(localStorage.getItem("cart")) || [];
+          const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+          document.getElementById("cart-count").textContent = count;
+        }
+
+        // Gọi hàm khi load trang
+        updateCartCount();
+      </script>
+</body>
+</html>
